@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function MediaSplitSection({ imageSrc, videoSrc, reverse = false }) {
+export default function MediaSplitSection({
+  imageSrc = "/wallmount/772248-wall-mounted-monitor-arm-removebg-preview.png",
+  videoSrc = "/videos/Untitled video.mp4",
+  reverse = false,
+} = {}) {
   return (
     <section className="section shell after-products-media">
       <div className={`after-products-grid${reverse ? " reverse" : ""}`}>

@@ -1,22 +1,26 @@
 import Image from "next/image";
+import { homepageContent } from "@/content/homepage";
 
-export default function ServicesSection({ services }) {
+export default function ServicesSection({ services = homepageContent.services } = {}) {
+  const data = { ...homepageContent.services, ...services };
+  const detailSections = Array.isArray(data.detailSections) ? data.detailSections : [];
+
   return (
     <section id="services" className="section shell services-elegant">
       <article className="panel services-head-card">
-        <p className="eyebrow">{services.heading}</p>
-        <h2>{services.heading}</h2>
-        <p>{services.intro}</p>
+        <p className="eyebrow">{data.heading}</p>
+        <h2>{data.heading}</h2>
+        <p>{data.intro}</p>
       </article>
 
       <article className="panel services-feature-card">
         <div className="services-feature-media">
-          <Image src={services.introImage} alt="SMT services" fill className="media-image" />
+          <Image src={data.introImage} alt="SMT services" fill className="media-image" />
         </div>
         <div className="services-feature-copy">
           <p className="services-feature-label">Coverage</p>
           <div className="services-chip-list">
-            {services.detailSections.map((item) => (
+            {detailSections.map((item) => (
               <span className="services-chip" key={item.heading}>
                 {item.heading}
               </span>
@@ -26,7 +30,7 @@ export default function ServicesSection({ services }) {
       </article>
 
       <div className="services-cards-grid">
-        {services.detailSections.map((item, index) => (
+        {detailSections.map((item, index) => (
           <article
             className={`panel service-elegant-card${index % 2 === 1 ? " is-reverse" : ""}`}
             key={item.heading}
