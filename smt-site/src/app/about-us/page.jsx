@@ -22,9 +22,9 @@ export default function AboutSection() {
       </p>
 
       <img
-        src="/about_img.png"
+        src="/about_img.jpg"
         alt="SMT Solution Management Team"
-        style={{ maxWidth: "600px", display: "block", marginTop: "20px" }}
+        style={{ width: '100%', height: 'auto', marginTop: '20px' }}
       />
     </div>
   );
