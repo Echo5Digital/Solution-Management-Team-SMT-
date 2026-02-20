@@ -1,15 +1,19 @@
 import Image from "next/image";
+import { homepageContent } from "@/content/homepage";
 
-export default function ProductsSection({ products }) {
+export default function ProductsSection({ products = homepageContent.products } = {}) {
+  const data = { ...homepageContent.products, ...products };
+  const items = Array.isArray(data.items) ? data.items : [];
+
   return (
     <section id="products" className="section shell products-showcase">
       <div className="products-copy">
-        <h2>{products.heading}</h2>
-        <p>{products.subtitle}</p>
+        <h2>{data.heading}</h2>
+        <p>{data.subtitle}</p>
       </div>
 
       <div className="products-scroll-row">
-        {products.items.map((item) => (
+        {items.map((item) => (
           <article className="product-showcase-card" key={item.heading}>
             <div className="product-showcase-info">
               <p className="product-showcase-kicker">SMT PRODUCT</p>
