@@ -6,8 +6,6 @@ export default async function Home() {
 
   return (
     <>
-      <div className="page-chrome" />
-
       <header className="top-nav">
         <div className="shell nav-inner">
           <a href="#top" className="logo-mark" aria-label="SMT Home">
@@ -31,10 +29,17 @@ export default async function Home() {
 
       <main id="top" className="main-wrap">
         <section className="hero-shell">
-          <div className="shell">
-            <article className="promo-banner">
-              <div className="banner-glow" />
-              <div className="banner-grid">
+          <article className="promo-banner">
+            <Image
+              src={content.hero.image}
+              alt="SMT banner"
+              fill
+              priority
+              className="banner-bg-image"
+            />
+            <div className="banner-overlay" />
+            <div className="banner-grid">
+              <div className="banner-layout">
                 <div className="banner-copy">
                   <p className="banner-top">SMT- Solution Management Team</p>
                   <h1 className="banner-main">
@@ -51,19 +56,9 @@ export default async function Home() {
                     </a>
                   </div>
                 </div>
-
-                <div className="banner-art">
-                  <Image
-                    src={content.hero.image}
-                    alt="SMT mounting solution"
-                    fill
-                    priority
-                    className="hero-image"
-                  />
-                </div>
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
         </section>
 
         <section id="about" className="section shell split-panel">
