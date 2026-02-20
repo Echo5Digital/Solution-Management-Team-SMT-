@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Manrope, Fraunces } from "next/font/google";
 import "./globals.css";
 
@@ -12,22 +11,16 @@ const fraunces = Fraunces({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Solution Management Team | Ergonomic Healthcare Mounting Solutions",
   description:
     "SMT delivers ergonomic mounting systems, installation, and maintenance services for hospitals and medical offices.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${fraunces.variable}`}>
-        {children}
-      </body>
+      <body className={`${manrope.variable} ${fraunces.variable}`}>{children}</body>
     </html>
   );
 }
