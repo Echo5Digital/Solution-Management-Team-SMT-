@@ -2,7 +2,7 @@ export const homepageContent = {
   companyName: "SMT- Solution Management Team",
   nav: [
     { label: "Home", href: "#top" },
-    { label: "About US", href: "#about" },
+    { label: "About US", href: "/about-us" },
     { label: "Products", href: "#products" },
     { label: "Services", href: "#services" },
     { label: "Contact", href: "#contact" },
