@@ -1,31 +1,23 @@
 export const homepageContent = {
   companyName: "SMT- Solution Management Team",
-  nav: [
-    { label: "Home", href: "#top" },
-    { label: "About US", href: "#about" },
-    { label: "Products", href: "#products" },
-    { label: "Services", href: "#services" },
-    { label: "Contact", href: "#contact" },
-  ],
   hero: {
     heading: "SMT- Solution Management Team",
     title: "We Provide Mounting Solutions for Your Business",
     subtitle:
       "Distributor / Reseller / Installer for ergonomic mounting solutions in hospitals, clinics, and medical offices.",
-    image: "/freepik__assistant__85945.png",
-    primaryCta: { label: "Contact US", href: "#contact" },
+    image: "/22128136_abstract_flowing_dots_background_1609.jpg",
+    video: "/videos/hero-banner.mp4",
+    primaryCta: { label: "Contact US", href: "/contact-us" },
     secondaryCta: { label: "Quote", href: "/SmtProducts/Quote" },
   },
   topBenefits: [
-    "Save space on work surfaces",
-    "Increase comfortable eye level",
-    "Prevent neck strain",
-    "Reduce desk and floor cable clutter",
+  
   ],
   about: {
     heading: "About US",
     text: "SMT- Solution Management Team specializes in computer equipment mounting. We sell, install, and provide maintenance for Humanscale, Capsa, Ergotron and other articulating wall arm mounts, desk mounts, monitor mounts, flat screen mounts, ceiling mounts, TV mounts, CPU holders, CPU lock boxes, laptop mounts and many custom mounts. SMT deployment team will provide free site survey, install demo unit, and will complete your need on-time and on budget while meeting all healthcare ergonomic and infection control guidelines. As an authorized reseller and certified installer for many ergonomic products, we provide warranties on our installation and maintenance for our products. Please contact us for an onsite evaluation, demo setup, installation services, cable management, repairs, or maintenance agreements on any type of ergonomic mounting solutions.",
     image: "/images/smt/flameonepage-img-500x500-01.jpg",
+    video: "/videos/Untitled video (4).mp4",
   },
   products: {
     heading: "Products",
@@ -35,7 +27,7 @@ export const homepageContent = {
       {
         heading: "Wall Mount",
         text: "The Wall Station combines exceptional space-savings with ergonomic design for comfortable caregiver computer use, whether seated or standing. The Wall Station supports a monitor and keyboard along with hardware, shelves, and accessories.",
-        image: "/images/smt/flameonepage-img-970x647-04.jpg",
+        image: "/wallmount/04-removebg-preview.png",
       },
       {
         heading: "Wall and Desk Monitor Mount",
@@ -45,7 +37,7 @@ export const homepageContent = {
       {
         heading: "CPU Holders",
         text: "Gain space on your desktop by mounting your CPU off your work surface or secure it by getting it off the floor and reclaim leg room. Why pay more money for hard drive maintenance when you can avoid static and dust damage. Let us help you gain your valuable space.",
-        image: "/images/smt/flameonepage-img-970x647-03.jpg",
+        image: "/wallmount/03-removebg-preview.png",
       },
       {
         heading: "Printer Shelves",

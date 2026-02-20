@@ -1,5 +1,7 @@
 import { Manrope, Fraunces } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar";
+import SiteFooter from "@/components/common/SiteFooter";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -20,7 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${fraunces.variable}`}>{children}</body>
+      <body className={`${manrope.variable} ${fraunces.variable}`}>
+        <Navbar />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
