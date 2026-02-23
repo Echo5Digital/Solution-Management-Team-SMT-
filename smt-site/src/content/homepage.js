@@ -17,11 +17,6 @@ export const homepageContent = {
     "Nationwide Installation Support",
     "Bi-Annual Preventive Maintenance",
     "On-Time, On-Budget Delivery",
-    "Free on-site survey",
-    "Certified installation teams",
-    "Healthcare infection-control compliance",
-    "On-time and on-budget delivery",
-    "Repair and preventive maintenance coverage",
   ],
   about: {
     heading: "About US",
