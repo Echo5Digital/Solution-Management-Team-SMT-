@@ -30,7 +30,7 @@ export default function ServicesSection({ services = homepageContent.services } 
     <section id="services" className={`section shell ${styles.servicesFeatured}`}>
       <div className={styles.servicesFeaturedHead}>
         <h2 className={styles.servicesFeaturedTitle}>{data.heading}</h2>
-        <Link href="/contact-us" className={styles.servicesFeaturedCta}>
+        <Link href="/contact-us" className={`ripple-button ${styles.servicesFeaturedCta}`}>
           Learn More
         </Link>
       </div>

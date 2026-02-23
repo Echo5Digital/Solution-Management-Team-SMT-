@@ -58,15 +58,6 @@
 
 .servicesFeaturedCta {
   flex-shrink: 0;
-  border-radius: 999px;
-  border: 1px solid #8d1519;
-  background: linear-gradient(180deg, #eb2026 0%, #b91217 100%);
-  color: #ffffff;
-  padding: 0.56rem 1.05rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-weight: 800;
 }
 
 .servicesFeaturedSubtitle {

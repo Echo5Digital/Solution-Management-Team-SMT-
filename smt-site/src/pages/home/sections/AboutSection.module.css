@@ -1,0 +1,187 @@
+.aboutSection {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.aboutWrap {
+  position: relative;
+}
+
+.twoCol {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 820px) {
+  .twoCol {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.copyCol {
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--red, #e3171e);
+}
+
+.title {
+  margin: 0.6em 0 0;
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+  max-width: 14ch;
+}
+
+.text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted, #5f6f86);
+  max-width: 52ch;
+}
+
+.pillList {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(196, 204, 219, 0.6);
+  border-radius: 999px;
+  background: rgba(236, 239, 244, 0.8);
+  color: var(--text, #111827);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.65rem;
+}
+
+.readMore {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  align-self: flex-start;
+}
+
+.mediaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.videoWrap {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  min-height: 260px;
+  background: var(--bg-soft, #eceff4);
+  border: 1px solid rgba(196, 204, 219, 0.5);
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.videoFallback {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-soft, #eceff4);
+}
+
+.mediaImage {
+  object-fit: cover;
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.playOverlay:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.playOverlay[aria-hidden="true"] {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.playIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--red, #e3171e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.playOverlay:hover .playIcon {
+  transform: scale(1.08);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.statCard {
+  border-radius: 12px;
+  border: 1px solid rgba(196, 204, 219, 0.6);
+  background: var(--panel, #ffffff);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statValue {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text, #111827);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--muted, #5f6f86);
+  font-weight: 500;
+}

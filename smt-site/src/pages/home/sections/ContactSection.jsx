@@ -74,7 +74,7 @@ export default function ContactSection({ contact = homepageContent.contact } = {
               placeholder={fields.message || "Tell us about your needs"}
               required
             />
-            <button type="submit" className={styles.submit}>
+            <button type="submit" className={`ripple-button ${styles.submit}`}>
               {formData.submitLabel || "Send Message"}
             </button>
           </form>

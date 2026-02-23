@@ -14,6 +14,42 @@ const NAV_LINKS = [
 
 const QUOTE_LINK = "/SmtProducts/Quote";
 
+function LogoIcon() {
+  return (
+    <svg className={styles.logoIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+      <path d="M7 5v14M12 4v16M17 6v12" />
+    </svg>
+  );
+}
+
+function BagIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -38,37 +74,44 @@ export default function Navbar() {
 
   return (
     <header className={styles.topNav}>
-      <div className={`shell ${styles.navInner}`}>
-        <Link href="/" className={styles.logoMark} aria-label="SMT Home">
-          <span>SMT</span>
-          <small>Solution Management Team</small>
-        </Link>
-
-        <nav className={styles.mainNav} aria-label="Main navigation">
-          {NAV_LINKS.map((item) => (
-            <Link key={item.label} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className={styles.navActions}>
-          <Link className={styles.ctaMini} href={QUOTE_LINK}>
-            Quote
+      <div className={styles.navPillWrap}>
+        <div className={`${styles.navPill} shell`}>
+          <Link href="/" className={styles.logoMark} aria-label="SMT Home">
+            <LogoIcon />
+            <span className={styles.logoText}>SMT</span>
           </Link>
 
-          <button
-            type="button"
-            className={styles.menuButton}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-main-nav"
-            onClick={toggleMenu}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <nav className={styles.mainNav} aria-label="Main navigation">
+            {NAV_LINKS.map((item) => (
+              <Link key={item.label} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className={styles.navActions}>
+            <Link href={QUOTE_LINK} className={styles.iconBtn} aria-label="Cart / Quote">
+              <BagIcon />
+            </Link>
+            <Link href="/contact-us" className={styles.iconBtn} aria-label="Account / Contact">
+              <UserIcon />
+            </Link>
+            <button type="button" className={styles.iconBtn} aria-label="Search">
+              <SearchIcon />
+            </button>
+            <button
+              type="button"
+              className={styles.menuButton}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-main-nav"
+              onClick={toggleMenu}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -79,7 +122,7 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link className={styles.mobileQuote} href={QUOTE_LINK} onClick={closeMenu}>
+          <Link className={`ripple-button ${styles.mobileQuote}`} href={QUOTE_LINK} onClick={closeMenu}>
             Quote
           </Link>
         </nav>

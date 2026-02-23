@@ -20,7 +20,7 @@ export const homepageContent = {
   ],
   about: {
     heading: "About US",
-    text: "SMT- Solution Management Team specializes in computer equipment mounting. We sell, install, and provide maintenance for Humanscale, Capsa, Ergotron and other articulating wall arm mounts, desk mounts, monitor mounts, flat screen mounts, ceiling mounts, TV mounts, CPU holders, CPU lock boxes, laptop mounts and many custom mounts. SMT deployment team will provide free site survey, install demo unit, and will complete your need on-time and on budget while meeting all healthcare ergonomic and infection control guidelines. As an authorized reseller and certified installer for many ergonomic products, we provide warranties on our installation and maintenance for our products. Please contact us for an onsite evaluation, demo setup, installation services, cable management, repairs, or maintenance agreements on any type of ergonomic mounting solutions.",
+    text: "SMT- Solution Management Team specializes in computer equipment mounting. We sell, install, and provide maintenance for Humanscale, Capsa, Ergotron and other articulating wall arm mounts, desk mounts, monitor mounts, flat screen mounts, ceiling mounts, TV mounts, CPU holders, CPU lock boxes, laptop mounts and many custom mounts.",
     missionHeading: "Our Mission",
     missionText:
       "Provide dependable ergonomic mounting solutions that improve safety, workflow, and comfort in healthcare and professional environments.",
@@ -73,7 +73,7 @@ export const homepageContent = {
       {
         heading: "Wall and Desk Monitor Mount",
         text: "In today's fully connected digital world, there is no time for discomfort. Ergonomic monitor arms and mounts clear up clutter on the workspace to improve comfort, health, and productivity.",
-        image: "/images/smt/flameonepage-img-970x647-02.jpg",
+        image: "/wallmount/flameonepage-img-970x647-02.webp",
       },
       {
         heading: "CPU Holders",
@@ -83,7 +83,7 @@ export const homepageContent = {
       {
         heading: "Printer Shelves",
         text: "Maximize your workspace efficiency with these creative printer shelf ideas. Find the perfect solution to keep your printer easily accessible and your desk clutter-free.",
-        image: "/images/smt/flameonepage-img-970x647-05.jpg",
+        image: "/wallmount/flameonepage-img-970x647-05.webp",
       },
     ],
   },

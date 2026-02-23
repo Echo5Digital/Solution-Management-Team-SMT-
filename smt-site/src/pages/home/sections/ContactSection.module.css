@@ -105,15 +105,6 @@
 
 .submit {
   width: fit-content;
-  border: 1px solid #8d1519;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #eb2026 0%, #b91217 100%);
-  color: #ffffff;
-  padding: 0.56rem 0.9rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
 }
 
 @media (min-width: 980px) {
