@@ -18,7 +18,7 @@
 
 .navPill {
   width: 100%;
-  min-height: 64px;
+  min-height: 66px;
   padding-inline: 1.5rem;
   display: flex;
   align-items: center;
@@ -34,20 +34,19 @@
 .logoMark {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
   line-height: 1;
 }
 
-.logoIcon {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+.logoImageWrap {
+  position: relative;
+  width: clamp(138px, 12.5vw, 182px);
+  height: clamp(40px, 3.9vw, 50px);
 }
 
-.logoText {
-  font-family: var(--font-fraunces), serif;
-  font-size: 1.34rem;
-  color: #e3171e;
+.logoImage {
+  object-fit: contain;
+  object-position: left center;
 }
 
 .mainNav {
@@ -165,16 +164,12 @@
 
 @media (max-width: 520px) {
   .navPill {
-    min-height: 56px;
+    min-height: 58px;
     padding-inline: 1rem;
   }
 
-  .logoText {
-    font-size: 1.2rem;
-  }
-
-  .logoIcon {
-    width: 24px;
-    height: 24px;
+  .logoImageWrap {
+    width: 136px;
+    height: 40px;
   }
 }

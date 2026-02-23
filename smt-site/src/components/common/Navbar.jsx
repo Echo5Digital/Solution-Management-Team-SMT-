@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
@@ -13,14 +14,6 @@ const NAV_LINKS = [
 ];
 
 const QUOTE_LINK = "/SmtProducts/Quote";
-
-function LogoIcon() {
-  return (
-    <svg className={styles.logoIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-      <path d="M7 5v14M12 4v16M17 6v12" />
-    </svg>
-  );
-}
 
 function BagIcon() {
   return (
@@ -77,8 +70,15 @@ export default function Navbar() {
       <div className={styles.navPillWrap}>
         <div className={`${styles.navPill} shell`}>
           <Link href="/" className={styles.logoMark} aria-label="SMT Home">
-            <LogoIcon />
-            <span className={styles.logoText}>SMT</span>
+            <span className={styles.logoImageWrap}>
+              <Image
+                src="/Logo%201-01.png"
+                alt="SMT logo"
+                fill
+                sizes="(max-width: 520px) 150px, 240px"
+                className={styles.logoImage}
+              />
+            </span>
           </Link>
 
           <nav className={styles.mainNav} aria-label="Main navigation">

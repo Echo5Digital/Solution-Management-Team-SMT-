@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
 import { homepageContent } from "@/content/homepage";
 import styles from "./AboutSection.module.css";
 
@@ -13,23 +10,7 @@ export default function AboutSection(
   const titleText = data.title?.trim() || data.heading?.trim() || "About US";
   const subtitleText = data.subtitle?.trim() || "";
   const showSubtitle = subtitleText && subtitleText.toLowerCase() !== titleText.toLowerCase();
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
   const stats = data.stats ?? [];
-
-  const toggleVideo = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleVideoEnded = () => setIsPlaying(false);
-  const handleVideoPlay = () => setIsPlaying(true);
-  const handleVideoPause = () => setIsPlaying(false);
 
   return (
     <section id="about" className={`section ${styles.aboutSection}`}>
@@ -60,33 +41,16 @@ export default function AboutSection(
           <div className={styles.mediaCol}>
             <div className={styles.videoWrap}>
               {data.video ? (
-                <>
-                  <video
-                    ref={videoRef}
-                    className={styles.video}
-                    src={data.video}
-                    poster={data.image}
-                    preload="metadata"
-                    loop
-                    playsInline
-                    onEnded={handleVideoEnded}
-                    onPlay={handleVideoPlay}
-                    onPause={handleVideoPause}
-                  />
-                  <button
-                    type="button"
-                    className={styles.playOverlay}
-                    onClick={toggleVideo}
-                    aria-label={isPlaying ? "Pause video" : "Play video"}
-                    aria-hidden={isPlaying}
-                  >
-                    <span className={styles.playIcon} aria-hidden>
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </span>
-                  </button>
-                </>
+                <video
+                  className={styles.video}
+                  src={data.video}
+                  poster={data.image}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
               ) : (
                 <div className={styles.videoFallback}>
                   <Image src={data.image} alt="About SMT" fill className={styles.mediaImage} />

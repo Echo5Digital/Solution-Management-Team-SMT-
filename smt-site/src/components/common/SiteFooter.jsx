@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { homepageContent } from "@/content/homepage";
 import styles from "./SiteFooter.module.css";
 
@@ -29,44 +32,55 @@ const SOCIAL_LINKS = [
 ];
 
 export default function SiteFooter() {
+  const pathname = usePathname();
+  const showHomeCta = pathname === "/";
   const { email, phone } = homepageContent.contact ?? {};
   const year = new Date().getFullYear();
 
   return (
     <footer className={styles.siteFooter}>
       <div className={`shell ${styles.footerInner}`}>
-        <section className={styles.footerCta} aria-label="Footer call to action">
-          <div className={styles.footerCtaLeft}>
-            <p className={styles.footerKicker}>
-              <span>Designed for Function. Built to Last.</span>
-              <i aria-hidden />
-            </p>
-            <h2 className={styles.footerCtaTitle}>Smart Mounting Solutions for Modern Healthcare.</h2>
-            <span className={styles.footerCtaDivider} aria-hidden />
-            <p className={styles.footerCtaSub}>
-              Tell us your needs, and we'll provide customized systems that enhance comfort, safety, and productivity.
-            </p>
-          </div>
+        {showHomeCta ? (
+          <section className={styles.footerCta} aria-label="Footer call to action">
+            <div className={styles.footerCtaLeft}>
+              <p className={styles.footerKicker}>
+                <span>Designed for Function. Built to Last.</span>
+                <i aria-hidden />
+              </p>
+              <h2 className={styles.footerCtaTitle}>Smart Mounting Solutions for Modern Healthcare.</h2>
+              <span className={styles.footerCtaDivider} aria-hidden />
+              <p className={styles.footerCtaSub}>
+                Tell us your needs, and we'll provide customized systems that enhance comfort, safety, and productivity.
+              </p>
+            </div>
 
-          <Link href="/contact-us" className={styles.footerCtaVisual} aria-label="Get in touch">
-            <span className={styles.footerCtaLogoWrap}>
-              <Image
-                src="/Logo%201-01.png"
-                alt="SMT logo"
-                fill
-                sizes="(max-width: 720px) 70vw, 340px"
-                className={styles.footerCtaLogo}
-              />
-            </span>
-          </Link>
-        </section>
+            <Link href="/contact-us" className={styles.footerCtaVisual} aria-label="Get in touch">
+              <span className={styles.footerCtaLogoWrap}>
+                <Image
+                  src="/Logo%201-01.png"
+                  alt="SMT logo"
+                  fill
+                  sizes="(max-width: 720px) 70vw, 340px"
+                  className={styles.footerCtaLogo}
+                />
+              </span>
+            </Link>
+          </section>
+        ) : null}
 
         <div className={styles.topSection}>
           <div className={styles.logoLineWrap}>
             <span className={styles.logoLine} aria-hidden />
             <Link href="/" className={styles.footerLogo} aria-label={`${COMPANY_NAME} home`}>
-              <span className={styles.logoLetter}>{COMPANY_NAME.charAt(0)}</span>
-              <span className={styles.logoRest}>{COMPANY_NAME.slice(1)}</span>
+              <span className={styles.footerLogoImageWrap}>
+                <Image
+                  src="/Logo%201-01.png"
+                  alt="SMT logo"
+                  fill
+                  sizes="(max-width: 480px) 140px, 180px"
+                  className={styles.footerLogoImage}
+                />
+              </span>
             </Link>
             <span className={styles.logoLine} aria-hidden />
           </div>

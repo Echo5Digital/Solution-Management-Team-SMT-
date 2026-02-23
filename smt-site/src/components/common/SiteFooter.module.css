@@ -115,22 +115,22 @@
 
 .footerLogo {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: inherit;
-  font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: -0.02em;
+  line-height: 0;
 }
 
-.logoLetter {
-  color: var(--red, #e3171e);
-  font-family: var(--font-fraunces), serif;
+.footerLogoImageWrap {
+  position: relative;
+  width: clamp(120px, 14vw, 182px);
+  height: clamp(36px, 4.4vw, 56px);
 }
 
-.logoRest {
-  color: #111827;
-  font-family: var(--font-manrope), sans-serif;
+.footerLogoImage {
+  object-fit: contain;
+  object-position: center;
 }
 
 .socialWrap {
@@ -323,6 +323,11 @@
 
   .logoLine {
     max-width: 60px;
+  }
+
+  .footerLogoImageWrap {
+    width: 132px;
+    height: 42px;
   }
 
   .footerLegal {
