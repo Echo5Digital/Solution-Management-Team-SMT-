@@ -11,7 +11,12 @@ export const homepageContent = {
     secondaryCta: { label: "Quote", href: "/SmtProducts/Quote" },
   },
   topBenefits: [
-  
+    "Authorized Reseller & Certified Installer",
+    "Free On-Site Evaluation",
+    "Healthcare Infection-Control Compliant",
+    "Nationwide Installation Support",
+    "Bi-Annual Preventive Maintenance",
+    "On-Time, On-Budget Delivery",
   ],
   about: {
     heading: "About US",
@@ -53,17 +58,17 @@ export const homepageContent = {
     introImage: "/images/smt/flameonepage-img-970x647-06.jpg",
     detailSections: [
       {
-        heading: "Evaluation",
+        heading: "Free Evaluation",
         text: "Solution Management Team are an ergonomic product distributor with a professionally trained and certified installers that ensures our clients receive the finest installation services designed to deliver point of care digital information ergonomically and efficiently. As a forerunner in providing computer hardware mounting solutions to hospitals and physicians across the country, we are committed to providing safe, efficient, and precise installations.",
         image: "/images/smt/flameonepage-img-970x647-07.jpg",
       },
       {
-        heading: "Installation",
+        heading: "Professional Installation",
         text: "Our installers focus on Safety, Durability, Functionality and Clean Installation. We accomplish this by using the highest quality installation materials and top installation technicians. From our industrial strength wall anchors to the industrial grade wire protection, our materials and methods are meant to last. And because your installation will be taking place in patient care areas, our staff will work with healthcare staff and during non-business hours to minimize any business interruptions. Our installers have been trained in infection control procedures and we create an infection control plan for each installation area. We use small vacuum units with HEPA filters to eliminate airborne particles as well as tents in patients care areas to prevent any dust.",
         image: "/images/smt/flameonepage-img-970x647-09.jpg",
       },
       {
-        heading: "Maintenance",
+        heading: "Bi-Annual Maintenance",
         text: "All of our product comes with five year warranty from manufactures. However, to be qualified for this warranty, the client must have a separate bi-annual preventive maintenance contract with SMT to:",
         bullets: [
           "Inspect all aspects to make sure there are no cracks",
@@ -79,10 +84,51 @@ export const homepageContent = {
       },
     ],
   },
+  benefits: {
+    heading: "Why Choose SMT",
+    subtitle: "Built for healthcare environments where reliability, safety, and response time are critical.",
+    items: [
+      {
+        title: "Certified Expertise",
+        text: "Factory-trained installers with hands-on experience across hospitals, clinics, and medical offices.",
+      },
+      {
+        title: "Healthcare Compliance",
+        text: "Installation process aligned with infection-control and patient-area safety expectations.",
+      },
+      {
+        title: "Project Clarity",
+        text: "Free evaluation, clear scope, and practical recommendations before work starts.",
+      },
+      {
+        title: "Durable Install Quality",
+        text: "Industrial-grade mounting and cable-management methods designed for long service life.",
+      },
+      {
+        title: "Maintenance Coverage",
+        text: "Bi-annual preventive maintenance plans to protect uptime and warranty eligibility.",
+      },
+      {
+        title: "Responsive Support",
+        text: "Fast follow-up for updates, expansions, and service calls as facilities evolve.",
+      },
+    ],
+  },
   contact: {
     heading: "Contact US",
     company: "SMT SOLUTION MANAGEMENT TEAM",
     phone: "+1 347-827-7397",
     email: "SALES@SOLUTIONMANAGEMENTTEAM.COM",
+    form: {
+      heading: "Request a Site Evaluation",
+      fields: {
+        name: "Full Name",
+        email: "Work Email",
+        phone: "Phone Number",
+        organization: "Organization",
+        message: "Tell us about your project",
+      },
+      submitLabel: "Send Request",
+    },
   },
 };

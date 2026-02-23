@@ -1,0 +1,189 @@
+.homeResponsive {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  .homeResponsive :global(.banner-grid) {
+    padding:
+      calc(72px + clamp(18px, 5vw, 42px))
+      clamp(14px, 3vw, 22px)
+      clamp(18px, 5vw, 38px);
+  }
+
+  .homeResponsive :global(.banner-main) {
+    max-width: 14ch;
+    font-size: clamp(1.75rem, 7vw, 2.8rem);
+  }
+
+  .homeResponsive :global(.banner-sub) {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .homeResponsive :global(.products-showcase) {
+    min-height: auto;
+    padding:
+      clamp(0.9rem, 2.8vw, 1.4rem)
+      clamp(0.85rem, 2.5vw, 1.4rem);
+  }
+
+  .homeResponsive :global(.products-scroll-row) {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .homeResponsive :global(.product-showcase-card) {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 0.55rem;
+  }
+
+  .homeResponsive :global(.product-showcase-media) {
+    height: clamp(180px, 46vw, 240px);
+  }
+
+  .homeResponsive :global(.after-products-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  .homeResponsive :global(.after-products-media-wrap) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .homeResponsive :global(.section) {
+    margin-top: 0.8rem;
+  }
+
+  .homeResponsive :global(.banner-main) {
+    max-width: 13ch;
+    font-size: clamp(1.55rem, 8.2vw, 2.2rem);
+    line-height: 1.02;
+  }
+
+  .homeResponsive :global(.banner-sub) {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .homeResponsive :global(.hero-actions) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .homeResponsive :global(.hero-actions .button) {
+    width: 100%;
+  }
+
+  .homeResponsive :global(.about-unified-card) {
+    padding: 0.65rem;
+  }
+
+  .homeResponsive :global(.about-unified-grid) {
+    gap: 0.7rem;
+  }
+
+  .homeResponsive :global(.about-unified-media) {
+    min-height: clamp(220px, 56vw, 300px);
+  }
+
+  .homeResponsive :global(.about-title) {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    line-height: 1.06;
+  }
+
+  .homeResponsive :global(.about-text) {
+    margin-top: 0.7rem;
+    font-size: 0.93rem;
+    line-height: 1.64;
+  }
+
+  .homeResponsive :global(.products-copy h2) {
+    font-size: clamp(1.35rem, 7vw, 1.95rem);
+  }
+
+  .homeResponsive :global(.products-copy p) {
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  .homeResponsive :global(.product-showcase-item-title) {
+    max-width: 100%;
+    font-size: 0.96rem;
+  }
+
+  .homeResponsive :global(.after-products-media-wrap) {
+    aspect-ratio: 16 / 10;
+  }
+
+  .homeResponsive :global(.contact-elegant-card) {
+    padding: 0.85rem;
+  }
+
+  .homeResponsive :global(.contact-elegant-top) {
+    gap: 0.65rem;
+  }
+
+  .homeResponsive :global(.contact-elegant-item) {
+    padding: 0.72rem 0.8rem;
+    min-width: 0;
+  }
+
+  .homeResponsive :global(.contact-elegant-value) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeResponsive :global(.shell) {
+    padding-inline: 12px;
+  }
+
+  .homeResponsive :global(.banner-grid) {
+    padding:
+      calc(72px + 16px)
+      12px
+      20px;
+  }
+
+  .homeResponsive :global(.banner-top) {
+    font-size: 0.74rem;
+  }
+
+  .homeResponsive :global(.banner-main) {
+    font-size: clamp(1.38rem, 8.8vw, 1.78rem);
+    max-width: 12.5ch;
+  }
+
+  .homeResponsive :global(.banner-sub) {
+    font-size: 0.86rem;
+  }
+
+  .homeResponsive :global(.products-showcase) {
+    padding: 0.8rem;
+  }
+
+  .homeResponsive :global(.product-showcase-card) {
+    padding: 0.62rem;
+  }
+
+  .homeResponsive :global(.product-showcase-info) {
+    padding: 0.3rem 0.22rem 0.35rem;
+  }
+
+  .homeResponsive :global(.product-showcase-media) {
+    height: 165px;
+  }
+
+  .homeResponsive :global(.contact-elegant-value) {
+    font-size: 0.88rem;
+  }
+}

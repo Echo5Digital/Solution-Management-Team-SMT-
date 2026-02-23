@@ -1,0 +1,104 @@
+.siteFooter {
+  border-top: 1px solid #d8deea;
+  margin-top: 1.8rem;
+  background: linear-gradient(180deg, #f7f9fd 0%, #f1f4fa 100%);
+  color: #41516a;
+}
+
+.footerInner {
+  padding-top: 1.1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: start;
+}
+
+.footerBrand {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.brandTitle {
+  margin: 0;
+  color: #1d2f48;
+  font-family: var(--font-fraunces), serif;
+  font-size: 1rem;
+}
+
+.brandSub {
+  margin: 0;
+  color: #607188;
+  line-height: 1.58;
+  font-size: 0.9rem;
+  max-width: 40ch;
+}
+
+.footerNav {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footerNav a {
+  width: fit-content;
+  color: #253851;
+  font-size: 0.88rem;
+}
+
+.footerNav a:hover {
+  color: #c51d24;
+}
+
+.footerContact {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: end;
+}
+
+.footerContact a {
+  color: #2a3f5b;
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.footerLegal {
+  border-top: 1px solid #d7dfec;
+  padding-top: 0.74rem;
+  padding-bottom: 1.2rem;
+  color: #6b7c93;
+  font-size: 0.84rem;
+}
+
+.footerLegal p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footerContact {
+    justify-items: start;
+  }
+
+  .footerContact a {
+    text-align: left;
+  }
+}
+
+@media (max-width: 620px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .brandSub {
+    font-size: 0.86rem;
+  }
+
+  .footerNav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem 0.6rem;
+  }
+}

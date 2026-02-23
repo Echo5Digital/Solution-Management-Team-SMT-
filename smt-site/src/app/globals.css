@@ -50,7 +50,7 @@ p {
 
 .shell {
   width: 100%;
-  max-width: none;
+  max-width: 1140px;
   padding-inline: clamp(12px, 2.4vw, 28px);
   margin-inline: auto;
 }
@@ -171,7 +171,7 @@ p {
 .banner-grid {
   position: relative;
   z-index: 1;
-  width: min(1220px, 100%);
+  width: min(1140px, 100%);
   min-height: 100vh;
   min-height: 100svh;
   margin-inline: auto;
@@ -340,10 +340,8 @@ p {
 .about-unified-card {
   padding: clamp(0.7rem, 1.5vw, 1rem);
   border-radius: 16px;
-  border: 1px solid #d8e1f0;
-  background:
-    radial-gradient(circle at 90% -20%, rgba(87, 128, 208, 0.14), transparent 42%),
-    linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+  border: 0;
+  background: transparent;
 }
 
 .about-unified-grid {
@@ -364,15 +362,18 @@ p {
   overflow: hidden;
   border-radius: 14px;
   min-height: clamp(280px, 35vw, 450px);
-  border: 1px solid rgba(168, 191, 230, 0.42);
-  background: #eef3fb;
+  border: 1px solid rgba(196, 204, 219, 0.5);
+  background: #f4f6fa;
   box-shadow: none;
 }
 
 .about-media-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 

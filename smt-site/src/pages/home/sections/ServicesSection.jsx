@@ -1,58 +1,58 @@
 import Image from "next/image";
+import Link from "next/link";
 import { homepageContent } from "@/content/homepage";
+import styles from "./ServicesSection.module.css";
 
 export default function ServicesSection({ services = homepageContent.services } = {}) {
   const data = { ...homepageContent.services, ...services };
   const detailSections = Array.isArray(data.detailSections) ? data.detailSections : [];
+  const featuredServices = detailSections.slice(0, 3);
+  const introText = typeof data.intro === "string" ? data.intro.trim() : "";
+  const introPreview =
+    introText.length > 195 ? `${introText.slice(0, 192).trimEnd().replace(/[.,;:!?-]*$/, "")}...` : introText;
+  const fallbackImages = [
+    "/about_img.jpg",
+    "/wallmount/772744-medical-computer-floor-stand-with-printer-tray-removebg-preview.png",
+    "/wallmount/772248-wall-mounted-monitor-arm-removebg-preview.png",
+  ];
+
+  const resolveImage = (item, index) => {
+    const image = item?.image || "";
+
+    if (!image || image.startsWith("/images/smt/")) {
+      return fallbackImages[index % fallbackImages.length];
+    }
+
+    return image;
+  };
 
   return (
-    <section id="services" className="section shell services-elegant">
-      <article className="panel services-head-card">
-        <p className="eyebrow">{data.heading}</p>
-        <h2>{data.heading}</h2>
-        <p>{data.intro}</p>
-      </article>
+    <section id="services" className={`section shell ${styles.servicesFeatured}`}>
+      <div className={styles.servicesFeaturedHead}>
+        <h2 className={styles.servicesFeaturedTitle}>{data.heading}</h2>
+        <Link href="/contact-us" className={styles.servicesFeaturedCta}>
+          Learn More
+        </Link>
+      </div>
+      <p className={styles.servicesFeaturedSubtitle}>{introPreview}</p>
 
-      <article className="panel services-feature-card">
-        <div className="services-feature-media">
-          <Image src={data.introImage} alt="SMT services" fill className="media-image" />
-        </div>
-        <div className="services-feature-copy">
-          <p className="services-feature-label">Coverage</p>
-          <div className="services-chip-list">
-            {detailSections.map((item) => (
-              <span className="services-chip" key={item.heading}>
-                {item.heading}
-              </span>
-            ))}
-          </div>
-        </div>
-      </article>
-
-      <div className="services-cards-grid">
-        {detailSections.map((item, index) => (
-          <article
-            className={`panel service-elegant-card${index % 2 === 1 ? " is-reverse" : ""}`}
-            key={item.heading}
-          >
-            <div className="service-elegant-content">
-              <p className="service-elegant-index">{String(index + 1).padStart(2, "0")}</p>
+      <div className={styles.servicesFeaturedGrid}>
+        {featuredServices.map((item, index) => (
+          <article className={styles.servicesFeaturedCard} key={item.heading}>
+            <div className={styles.servicesFeaturedCardHead}>
               <h3>{item.heading}</h3>
-              <p>{item.text}</p>
-
-              {item.bullets ? (
-                <ul className="service-elegant-bullets">
-                  {item.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              ) : null}
-
-              {item.footnote ? <p className="service-elegant-footnote">{item.footnote}</p> : null}
+              <span className={styles.servicesFeaturedCardIndex}>{String(index + 1).padStart(2, "0")}</span>
             </div>
+            <p className={styles.servicesFeaturedCardText}>{item.text}</p>
 
-            <div className="service-elegant-media">
-              <Image src={item.image} alt={item.heading} fill className="media-image" />
+            <div className={styles.servicesFeaturedCardMedia}>
+              <Image
+                src={resolveImage(item, index)}
+                alt={item.heading}
+                fill
+                sizes="(max-width: 899px) 100vw, 33vw"
+                className={styles.servicesFeaturedCardImage}
+              />
             </div>
           </article>
         ))}
