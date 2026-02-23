@@ -219,6 +219,59 @@ p {
   line-height: 1.62;
 }
 
+.about-page-hero-shell {
+  margin-top: 0;
+}
+
+.about-page-hero .banner-overlay {
+  background: linear-gradient(96deg, rgba(8, 14, 28, 0.2) 0%, rgba(10, 23, 54, 0.34) 56%, rgba(7, 12, 24, 0.68) 100%);
+}
+
+.about-page-banner-copy {
+  margin-left: auto;
+  text-align: right;
+  max-width: min(760px, 94vw);
+}
+
+.about-page-banner-main {
+  margin-left: auto;
+  max-width: 14ch;
+}
+
+.about-page-banner-copy .banner-sub {
+  margin-left: auto;
+  max-width: 52ch;
+}
+
+@media (max-width: 760px) {
+  .about-page-banner-main {
+    max-width: 13.25ch;
+    font-size: clamp(1.55rem, 8.2vw, 2.2rem);
+    line-height: 1.03;
+  }
+
+  .about-page-banner-copy .banner-sub {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.56;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page-banner-main {
+    max-width: 12.5ch;
+    font-size: clamp(1.38rem, 8.8vw, 1.78rem);
+  }
+
+  .about-page-banner-copy .banner-top {
+    font-size: 0.74rem;
+  }
+
+  .about-page-banner-copy .banner-sub {
+    font-size: 0.86rem;
+  }
+}
+
 .panel {
   border: 1px solid var(--line-soft);
   background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);

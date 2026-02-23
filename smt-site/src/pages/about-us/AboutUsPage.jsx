@@ -10,6 +10,8 @@ export default async function AboutUsPage() {
   const title = pageData.title ?? heading;
   const description = pageData.text ?? content.about?.text ?? "";
   const strengths = pageData.strengths?.length ? pageData.strengths : content.topBenefits ?? [];
+  const mediaImage = pageData.image ?? content.about?.image ?? "/about_img.jpg";
+  const mediaVideo = pageData.video ?? content.about?.video;
 
   const missionHeading = pageData.missionHeading ?? content.about?.missionHeading ?? "Our Mission";
   const missionText =
@@ -25,11 +27,35 @@ export default async function AboutUsPage() {
     "From evaluation through maintenance, SMT supports the full lifecycle of ergonomic mounting solutions.";
   const approachPoints = pageData.approachPoints ?? [];
 
-  const mediaImage = pageData.image ?? content.about?.image;
-  const mediaVideo = pageData.video ?? content.about?.video;
-
   return (
     <main className="page-main">
+      <section className="hero-shell about-page-hero-shell">
+        <article className="promo-banner about-page-hero">
+          <Image src="/about-ban.jpg" alt="About SMT banner" fill priority className="banner-bg-image" />
+
+          <div className="banner-overlay" />
+
+          <div className="banner-grid">
+            <div className="banner-layout">
+              <div className="banner-copy about-page-banner-copy">
+                <p className="banner-top">SMT &ndash; SOLUTION MANAGEMENT TEAM</p>
+                <h1 className="banner-main about-page-banner-main">
+                  PRECISION MOUNTING
+                  <br />
+                  SOLUTIONS BUILT FOR
+                  <br />
+                  YOUR WORKSPACE
+                </h1>
+                <p className="banner-sub">
+                  Trusted Distributor &bull; Certified Installer &bull; Ergonomic Experts for Healthcare &
+                  Commercial Environments
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <section className="section shell about-section">
         <article className="panel about-unified-card">
           <div className="about-unified-grid">
@@ -53,7 +79,7 @@ export default async function AboutUsPage() {
 
             <div className="about-unified-content">
               <p className="eyebrow">{heading}</p>
-              <h1 className="about-title">{title}</h1>
+              <h2 className="about-title">{title}</h2>
               <p className="about-text">{description}</p>
 
               {strengths.length ? (
