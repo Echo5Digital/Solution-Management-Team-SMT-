@@ -219,6 +219,19 @@ p {
   line-height: 1.62;
 }
 
+.about-page-hero .banner-layout {
+  justify-items: end;
+}
+
+.about-page-banner-copy {
+  margin-left: auto;
+  text-align: right;
+}
+
+.about-page-banner-copy .banner-sub {
+  margin-left: auto;
+}
+
 .panel {
   border: 1px solid var(--line-soft);
   background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);

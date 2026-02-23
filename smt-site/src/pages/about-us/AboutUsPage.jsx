@@ -28,7 +28,7 @@ export default async function AboutUsPage() {
   const approachPoints = pageData.approachPoints ?? [];
 
   return (
-    <main className="page-main">
+    <main className="main-wrap">
       <section className="hero-shell about-page-hero-shell">
         <article className="promo-banner about-page-hero">
           <Image src="/about-ban.jpg" alt="About SMT banner" fill priority className="banner-bg-image" />
