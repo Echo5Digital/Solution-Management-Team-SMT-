@@ -870,6 +870,8 @@ p {
 .after-products-media {
   margin-top: clamp(1.2rem, 2.2vw, 2rem);
   margin-bottom: clamp(0.6rem, 1.5vw, 1.2rem);
+   width: min(1400px, 95%);
+  margin-inline: auto;
 }
 
 .after-products-grid {
@@ -894,16 +896,13 @@ p {
 }
 
 .after-products-item {
-  border: 1px solid #d9e0ec;
+  border: 0px solid #d9e0ec;
   border-radius: 14px;
-  background: #f1f4f9;
   padding: 0.6rem;
 }
-
 .after-products-media-wrap {
   position: relative;
-  min-height: 0;
-  aspect-ratio: 16 / 9;
+  min-height: 520px;
   border-radius: 12px;
   overflow: hidden;
   background: #ffffff;
@@ -927,6 +926,7 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
 }
 
 @media (min-width: 980px) {

@@ -20,13 +20,14 @@ export default async function HomePage() {
         imageSrc="/wallmount/772248-wall-mounted-monitor-arm-removebg-preview.png"
         videoSrc="/videos/Untitled video.mp4"
       />
-      <MediaSplitSection
+     
+      <ServicesSection services={content.services} />
+      <BenefitsSection benefits={content.benefits} />
+       <MediaSplitSection
         imageSrc="/wallmount/772264-01-removebg-preview.png"
         videoSrc="/videos/Untitled video (2).mp4"
         reverse
       />
-      <ServicesSection services={content.services} />
-      <BenefitsSection benefits={content.benefits} />
       <ContactSection contact={content.contact} />
     </main>
   );

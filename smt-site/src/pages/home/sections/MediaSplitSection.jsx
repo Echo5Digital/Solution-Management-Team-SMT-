@@ -6,7 +6,7 @@ export default function MediaSplitSection({
   reverse = false,
 } = {}) {
   return (
-    <section className="section shell after-products-media">
+    <section className="section  after-products-media">
       <div className={`after-products-grid${reverse ? " reverse" : ""}`}>
         <article className="after-products-item">
           <div className="after-products-media-wrap">

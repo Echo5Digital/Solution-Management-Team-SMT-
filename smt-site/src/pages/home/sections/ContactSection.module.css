@@ -16,9 +16,6 @@
 
 .contactInfo h2 {
   margin: 0.35rem 0 0;
-  font-size: clamp(1.4rem, 3vw, 2.1rem);
-  color: #112d4f;
-  text-transform: uppercase;
 }
 
 .eyebrow {
@@ -82,7 +79,6 @@
 .contactForm h3 {
   margin: 0 0 0.2rem;
   color: #1d3452;
-  font-size: 1.08rem;
 }
 
 .field {

@@ -48,10 +48,7 @@
 .servicesFeaturedTitle {
   margin: 0;
   max-width: 18ch;
-  font-size: clamp(2rem, 4.4vw, 3.2rem);
-  line-height: 0.96;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
+  line-height: 1.2;
   color: #102a4d;
   text-wrap: balance;
 }
@@ -95,11 +92,7 @@
 
 .servicesFeaturedCardHead h3 {
   margin: 0;
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 1.08rem;
-  font-weight: 700;
   color: #152d49;
-  line-height: 1.2;
 }
 
 .servicesFeaturedCardIndex {
@@ -148,8 +141,4 @@
     align-items: flex-start;
   }
 
-  .servicesFeaturedTitle {
-    font-size: clamp(1.7rem, 8vw, 2.3rem);
-    line-height: 1;
-  }
 }

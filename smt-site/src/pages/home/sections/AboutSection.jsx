@@ -10,6 +10,9 @@ export default function AboutSection(
   { about = homepageContent.about, topBenefits = homepageContent.topBenefits ?? [] } = {},
 ) {
   const data = { ...homepageContent.about, ...about };
+  const titleText = data.title?.trim() || data.heading?.trim() || "About US";
+  const subtitleText = data.subtitle?.trim() || "";
+  const showSubtitle = subtitleText && subtitleText.toLowerCase() !== titleText.toLowerCase();
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const stats = data.stats ?? [];
@@ -33,11 +36,11 @@ export default function AboutSection(
       <div className={`shell ${styles.aboutWrap}`}>
         <div className={styles.twoCol}>
           <div className={styles.copyCol}>
-            {data.subtitle && (
-              <p className={styles.subtitle}>{data.subtitle}</p>
+            {showSubtitle && (
+              <p className={styles.subtitle}>{subtitleText}</p>
             )}
             <h2 className={styles.title}>
-              {data.title || data.heading}
+              {titleText}
             </h2>
             <p className={styles.text}>{data.text}</p>
             {topBenefits.length > 0 && (

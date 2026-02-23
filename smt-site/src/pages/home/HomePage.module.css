@@ -12,7 +12,7 @@
 
   .homeResponsive :global(.banner-main) {
     max-width: 14ch;
-    font-size: clamp(1.75rem, 7vw, 2.8rem);
+    font-size: clamp(2.5rem, 8.5vw, 3.9rem);
   }
 
   .homeResponsive :global(.banner-sub) {
@@ -58,7 +58,7 @@
 
   .homeResponsive :global(.banner-main) {
     max-width: 13ch;
-    font-size: clamp(1.55rem, 8.2vw, 2.2rem);
+    font-size: clamp(2.2rem, 10.5vw, 3.1rem);
     line-height: 1.02;
   }
 
@@ -100,10 +100,6 @@
     margin-top: 0.7rem;
     font-size: 0.93rem;
     line-height: 1.64;
-  }
-
-  .homeResponsive :global(.products-copy h2) {
-    font-size: clamp(1.35rem, 7vw, 1.95rem);
   }
 
   .homeResponsive :global(.products-copy p) {
@@ -155,11 +151,11 @@
   }
 
   .homeResponsive :global(.banner-top) {
-    font-size: 0.74rem;
+    font-size: 0.98rem;
   }
 
   .homeResponsive :global(.banner-main) {
-    font-size: clamp(1.38rem, 8.8vw, 1.78rem);
+    font-size: clamp(1.95rem, 11vw, 2.5rem);
     max-width: 12.5ch;
   }
 

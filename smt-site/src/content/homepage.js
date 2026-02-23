@@ -123,6 +123,7 @@ export const homepageContent = {
   benefits: {
     heading: "Why Choose SMT",
     subtitle: "Built for healthcare environments where reliability, safety, and response time are critical.",
+   
     items: [
       {
         title: "Certified Expertise",
