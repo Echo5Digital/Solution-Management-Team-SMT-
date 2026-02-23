@@ -1,0 +1,19 @@
+.pageMain {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pageBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(-1 * (72px + 1.2rem));
+  bottom: 0;
+  background-image: url("/contact.jpg");
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
