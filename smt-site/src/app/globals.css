@@ -870,7 +870,7 @@ p {
 .after-products-media {
   margin-top: clamp(1.2rem, 2.2vw, 2rem);
   margin-bottom: clamp(0.6rem, 1.5vw, 1.2rem);
-   width: min(1400px, 95%);
+  width: min(1400px, 95%);
   margin-inline: auto;
 }
 
@@ -902,7 +902,7 @@ p {
 }
 .after-products-media-wrap {
   position: relative;
-  min-height: 520px;
+  min-height: clamp(260px, 38vw, 520px);
   border-radius: 12px;
   overflow: hidden;
   background: #ffffff;
@@ -927,6 +927,32 @@ p {
   object-fit: cover;
   display: block;
   position: absolute;
+}
+
+@media (max-width: 1024px) {
+  .after-products-media {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .after-products-item {
+    padding: 0.35rem;
+  }
+
+  .after-products-media-wrap {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 560px) {
+  .promo-banner {
+    min-height: 86svh;
+  }
+
+  .after-products-media-wrap {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 @media (min-width: 980px) {

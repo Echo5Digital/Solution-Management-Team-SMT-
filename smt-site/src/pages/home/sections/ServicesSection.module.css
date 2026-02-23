@@ -68,7 +68,7 @@
 .servicesFeaturedGrid {
   position: relative;
   z-index: 1;
-  margin-top: 5rem;        /* add more space above boxes */
+  margin-top: clamp(1.1rem, 2.4vw, 2rem);
   display: grid;
   gap: 1.2rem;
   grid-template-columns: 1fr;
@@ -202,9 +202,63 @@
 
 /* RESPONSIVE */
 @media (max-width: 620px) {
+  .servicesFeatured {
+    padding: 0.85rem 0.75rem 1rem;
+  }
+
+  .servicesFeatured::before {
+    width: 170px;
+    height: 120px;
+    left: -85px;
+    bottom: -90px;
+  }
+
+  .servicesFeatured::after {
+    width: 210px;
+    height: 130px;
+    right: -115px;
+    bottom: -95px;
+  }
+
   .servicesFeaturedHead {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .servicesFeaturedTitle {
+    max-width: none;
+  }
+
+  .servicesFeaturedCta {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .servicesFeaturedSubtitle {
+    margin-top: 0.38rem;
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+
+  .servicesFeaturedGrid {
+    margin-top: 0.95rem;
+    gap: 0.8rem;
+  }
+
+  .servicesFeaturedCard {
+    border-radius: 16px;
+    padding: 1rem 0.9rem 1.1rem;
+  }
+
+  .servicesFeaturedCardHead h3 {
+    font-size: 0.98rem;
+  }
+
+  .servicesFeaturedCardText {
+    margin-top: 0.48rem;
+    font-size: 0.84rem;
+    line-height: 1.57;
   }
   
   .servicesFeaturedCard::before {
@@ -222,5 +276,10 @@
     width: 72px;
     height: 72px;
     font-size: 2rem;
+  }
+
+  .servicesFeaturedCardMedia {
+    margin-top: 0.85rem;
+    border-radius: 14px;
   }
 }
