@@ -1,13 +1,91 @@
 .siteFooter {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   margin-top: 2.5rem;
-  background: #fff;
+  background: #ebedf1;
   color: #111827;
 }
 
 .footerInner {
-  padding-top: 2.5rem;
+  padding-top: 1.2rem;
   padding-bottom: 2rem;
+}
+
+.footerCta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  padding:
+    clamp(1.2rem, 3vw, 2.2rem)
+    0
+    clamp(1.3rem, 3vw, 2.3rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  margin-bottom: 2rem;
+}
+
+.footerCtaLeft {
+  min-width: 0;
+}
+
+.footerKicker {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #111827;
+  font-size: clamp(0.96rem, 1.3vw, 1.15rem);
+}
+
+.footerKicker i {
+  display: inline-block;
+  width: clamp(38px, 7vw, 76px);
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.footerCtaTitle {
+  margin: clamp(0.7rem, 1.5vw, 1.1rem) 0 0;
+  max-width: 12ch;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: clamp(2rem, 5.8vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #0b1019;
+}
+
+.footerCtaDivider {
+  display: block;
+  width: min(100%, 840px);
+  height: 1px;
+  margin-top: clamp(0.9rem, 2vw, 1.3rem);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.footerCtaSub {
+  margin: clamp(1rem, 2vw, 1.35rem) 0 0;
+  color: #1d2735;
+  font-size: clamp(1.02rem, 1.9vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.footerCtaVisual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerCtaLogoWrap {
+  position: relative;
+  width: clamp(180px, 28vw, 360px);
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+}
+
+.footerCtaLogo {
+  object-fit: contain;
+  object-position: center;
 }
 
 /* Top: logo with decorative lines + social */
@@ -184,6 +262,29 @@
 }
 
 @media (max-width: 720px) {
+  .footerCta {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .footerKicker {
+    justify-content: center;
+  }
+
+  .footerCtaTitle {
+    max-width: 100%;
+  }
+
+  .footerCtaDivider {
+    margin-inline: auto;
+  }
+
+  .footerCtaLogoWrap {
+    width: min(72vw, 230px);
+  }
+
   .middleSection {
     grid-template-columns: 1fr;
     gap: 1.5rem;

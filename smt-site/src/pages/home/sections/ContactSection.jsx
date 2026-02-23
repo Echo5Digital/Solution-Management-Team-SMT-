@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./ContactSection.module.css";
 import { homepageContent } from "@/content/homepage";
 
@@ -31,27 +32,37 @@ export default function ContactSection({ contact = homepageContent.contact } = {
   return (
     <section id="contact" className={`section shell ${styles.contactSection}`}>
       <article className={styles.contactCard}>
-        <div className={styles.contactGrid}>
-          <div className={styles.contactInfo}>
-            <p className={styles.eyebrow}>{data.heading}</p>
-            <h2>{data.heading}</h2>
-            <p className={styles.company}>{data.company}</p>
+        <div className={styles.inlineTopWrap}>
+          <div className={styles.inlineTopCard}>
+            <div className={styles.inlineLeft}>
+              <h3>{formData.heading || "Request a Site Evaluation"}</h3>
+              <div className={styles.inlineLine}>{fields.name || "Full Name"}</div>
+              <div className={styles.inlineLine}>{fields.email || "Work Email"}</div>
+              <div className={styles.inlineLine}>{fields.phone || "Phone Number"}</div>
+              <div className={styles.inlineLine}>{fields.organization || "Organization"}</div>
+              <p className={styles.inlineLabel}>{fields.message || "Tell us about your project"}</p>
+           <button type="button" className={`ripple-button ${styles.inlineNext}`}>
+  {formData.submitLabel || "Send Request"}
+</button>
 
-            <div className={styles.contactBlocks}>
-              <a className={styles.contactBlock} href={`tel:${data.phone}`}>
-                <p>Phone</p>
-                <span>{data.phone}</span>
-              </a>
+            </div>
 
-              <a className={styles.contactBlock} href={`mailto:${data.email}`}>
-                <p>Email</p>
-                <span>{data.email}</span>
-              </a>
+            <div className={styles.inlineRight}>
+              <div className={styles.inlineImageWrap}>
+                <Image
+                  src="/about-ban.jpg"
+                  alt="Contact preview"
+                  fill
+                  sizes="(max-width: 800px) 70vw, 300px"
+                  className={styles.inlineImage}
+                />
+              </div>
             </div>
           </div>
-
+        </div>
+{/* 
+        <div className={styles.contactGrid}>
           <form className={styles.contactForm} onSubmit={handleSubmit}>
-            <h3>{formData.heading || "Send us a message"}</h3>
             <input className={styles.field} name="name" type="text" placeholder={fields.name || "Full Name"} required />
             <input
               className={styles.field}
@@ -78,7 +89,7 @@ export default function ContactSection({ contact = homepageContent.contact } = {
               {formData.submitLabel || "Send Message"}
             </button>
           </form>
-        </div>
+        </div> */}
       </article>
     </section>
   );

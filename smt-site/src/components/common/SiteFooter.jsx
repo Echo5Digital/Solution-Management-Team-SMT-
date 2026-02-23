@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { homepageContent } from "@/content/homepage";
 import styles from "./SiteFooter.module.css";
@@ -34,7 +35,32 @@ export default function SiteFooter() {
   return (
     <footer className={styles.siteFooter}>
       <div className={`shell ${styles.footerInner}`}>
-        {/* Top: decorative lines + centered logo + social */}
+        <section className={styles.footerCta} aria-label="Footer call to action">
+          <div className={styles.footerCtaLeft}>
+            <p className={styles.footerKicker}>
+              <span>Designed for Function. Built to Last.</span>
+              <i aria-hidden />
+            </p>
+            <h2 className={styles.footerCtaTitle}>Smart Mounting Solutions for Modern Healthcare.</h2>
+            <span className={styles.footerCtaDivider} aria-hidden />
+            <p className={styles.footerCtaSub}>
+              Tell us your needs, and we'll provide customized systems that enhance comfort, safety, and productivity.
+            </p>
+          </div>
+
+          <Link href="/contact-us" className={styles.footerCtaVisual} aria-label="Get in touch">
+            <span className={styles.footerCtaLogoWrap}>
+              <Image
+                src="/Logo%201-01.png"
+                alt="SMT logo"
+                fill
+                sizes="(max-width: 720px) 70vw, 340px"
+                className={styles.footerCtaLogo}
+              />
+            </span>
+          </Link>
+        </section>
+
         <div className={styles.topSection}>
           <div className={styles.logoLineWrap}>
             <span className={styles.logoLine} aria-hidden />
@@ -60,7 +86,6 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* Middle: Quick Links | divider + contact | Other Links */}
         <div className={styles.middleSection}>
           <nav className={styles.quickLinks} aria-label="Quick links">
             {QUICK_LINKS.map((item) => (
@@ -72,12 +97,8 @@ export default function SiteFooter() {
           <div className={styles.contactBlock}>
             <span className={styles.verticalRule} aria-hidden />
             <div className={styles.contactDetails}>
-              {email && (
-                <a href={`mailto:${email}`}>{email}</a>
-              )}
-              {phone && (
-                <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
-              )}
+              {email ? <a href={`mailto:${email}`}>{email}</a> : null}
+              {phone ? <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a> : null}
             </div>
           </div>
           <nav className={styles.otherLinks} aria-label="More links">
@@ -90,9 +111,10 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      {/* Bottom: copyright | Privacy | Sitemap */}
       <div className={`shell ${styles.footerLegal}`}>
-        <span>Copyright &copy; {year} {COMPANY_FULL}</span>
+        <span>
+          Copyright &copy; {year} {COMPANY_FULL}
+        </span>
         <span className={styles.legalSep} aria-hidden />
         <Link href="/privacy">Privacy Policy</Link>
         <span className={styles.legalSep} aria-hidden />

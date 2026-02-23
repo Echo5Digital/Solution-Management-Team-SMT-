@@ -1,87 +1,48 @@
-"use client";
-
-import Image from "next/image";
-import { useRef, useState } from "react";
 import { homepageContent } from "@/content/homepage";
 import styles from "./BenefitsSection.module.css";
+
+const NUMBER_MEDIA = [
+  "/about-ban.jpg",
+  "/about_img.jpg",
+  "/wallmount/flameonepage-img-970x647-02.webp",
+  "/wallmount/flameonepage-img-970x647-05.webp",
+  "/about-ban.jpg",
+  "/about-ban.jpg",
+];
 
 export default function BenefitsSection({ benefits = homepageContent.benefits } = {}) {
   const data = { ...homepageContent.benefits, ...benefits };
   const items = Array.isArray(data.items) ? data.items : [];
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const toggleVideo = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const hasMedia = data.image || data.video;
 
   return (
     <section id="benefits" className={`section shell ${styles.benefitsSection}`}>
       <div className={styles.benefitsHead}>
-        <p className={styles.eyebrow}>Benefits</p>
         <h2>{data.heading}</h2>
         <p>{data.subtitle}</p>
       </div>
 
-      <div className={styles.benefitsGrid}>
-        {items.map((item) => (
-          <article key={item.title} className={styles.benefitCard}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
-      </div>
+      <div className={styles.benefitsTimeline}>
+        {items.map((item, index) => {
+          const number = String(index + 1).padStart(2, "0");
+          const reverse = index % 2 === 1;
 
-      {hasMedia && (
-        <div className={styles.benefitsMediaRow}>
-          {data.image && (
-            <div className={styles.benefitsMediaItem}>
-              <div className={styles.benefitsMediaWrap}>
-                <Image src={data.image} alt="Why Choose SMT" fill className={styles.benefitsMediaImage} />
+          return (
+            <article key={item.title} className={`${styles.timelineRow}${reverse ? ` ${styles.isReverse}` : ""}`}>
+              <span
+                className={styles.timelineNumber}
+                style={{ backgroundImage: `url('${NUMBER_MEDIA[index % NUMBER_MEDIA.length]}')` }}
+                aria-hidden
+              >
+                {number}
+              </span>
+              <div className={styles.timelineContent}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </div>
-            </div>
-          )}
-          {data.video && (
-            <div className={styles.benefitsMediaItem}>
-              <div className={styles.benefitsMediaWrap}>
-                <video
-                  ref={videoRef}
-                  className={styles.benefitsVideo}
-                  src={data.video}
-                  poster={data.image}
-                  preload="metadata"
-                  loop
-                  playsInline
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onEnded={() => setIsPlaying(false)}
-                />
-                <button
-                  type="button"
-                  className={styles.benefitsPlayOverlay}
-                  onClick={toggleVideo}
-                  aria-label={isPlaying ? "Pause video" : "Play video"}
-                  aria-hidden={isPlaying}
-                >
-                  <span className={styles.benefitsPlayIcon} aria-hidden>
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }
