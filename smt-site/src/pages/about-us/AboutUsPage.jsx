@@ -6,11 +6,6 @@ export default async function AboutUsPage() {
   const content = await getHomepageContent();
   const pageData = content.aboutPage ?? {};
 
-  const heading = pageData.heading ?? content.about?.heading ?? "About US";
-  const title = pageData.title ?? heading;
-  const description = pageData.text ?? content.about?.text ?? "";
-  const strengths = pageData.strengths?.length ? pageData.strengths : content.topBenefits ?? [];
-
   const missionHeading = pageData.missionHeading ?? content.about?.missionHeading ?? "Our Mission";
   const missionText =
     pageData.missionText ??
@@ -25,46 +20,30 @@ export default async function AboutUsPage() {
     "From evaluation through maintenance, SMT supports the full lifecycle of ergonomic mounting solutions.";
   const approachPoints = pageData.approachPoints ?? [];
 
-  const mediaImage = pageData.image ?? content.about?.image;
-  const mediaVideo = pageData.video ?? content.about?.video;
-
   return (
     <main className="page-main">
-      <section className="section shell about-section">
-        <article className="panel about-unified-card">
-          <div className="about-unified-grid">
-            <div className="about-unified-media">
-              {mediaVideo ? (
-                <video
-                  className="about-media-video"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster={mediaImage}
-                >
-                  <source src={mediaVideo} type="video/mp4" />
-                </video>
-              ) : (
-                <Image src={mediaImage} alt="About SMT" fill className="media-image" />
-              )}
-            </div>
+      <section className="hero-shell about-page-hero-shell">
+        <article className="promo-banner about-page-hero">
+          <Image src="/about-ban.jpg" alt="About SMT banner" fill priority className="banner-bg-image" />
 
-            <div className="about-unified-content">
-              <p className="eyebrow">{heading}</p>
-              <h1 className="about-title">{title}</h1>
-              <p className="about-text">{description}</p>
+          <div className="banner-overlay" />
 
-              {strengths.length ? (
-                <ul className="about-pill-list" aria-label="SMT strengths">
-                  {strengths.map((strength) => (
-                    <li key={strength} className="about-pill">
-                      {strength}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+          <div className="banner-grid">
+            <div className="banner-layout">
+              <div className="banner-copy about-page-banner-copy">
+                <p className="banner-top">SMT &ndash; SOLUTION MANAGEMENT TEAM</p>
+                <h1 className="banner-main about-page-banner-main">
+                  PRECISION MOUNTING
+                  <br />
+                  SOLUTIONS BUILT FOR
+                  <br />
+                  YOUR WORKSPACE
+                </h1>
+                <p className="banner-sub">
+                  Trusted Distributor &bull; Certified Installer &bull; Ergonomic Experts for Healthcare &
+                  Commercial Environments
+                </p>
+              </div>
             </div>
           </div>
         </article>
