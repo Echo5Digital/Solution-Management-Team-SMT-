@@ -6,6 +6,13 @@ export default async function AboutUsPage() {
   const content = await getHomepageContent();
   const pageData = content.aboutPage ?? {};
 
+  const heading = pageData.heading ?? content.about?.heading ?? "About US";
+  const title = pageData.title ?? heading;
+  const description = pageData.text ?? content.about?.text ?? "";
+  const strengths = pageData.strengths?.length ? pageData.strengths : content.topBenefits ?? [];
+  const mediaImage = pageData.image ?? content.about?.image ?? "/about_img.jpg";
+  const mediaVideo = pageData.video ?? content.about?.video;
+
   const missionHeading = pageData.missionHeading ?? content.about?.missionHeading ?? "Our Mission";
   const missionText =
     pageData.missionText ??
@@ -44,6 +51,46 @@ export default async function AboutUsPage() {
                   Commercial Environments
                 </p>
               </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="section shell about-section">
+        <article className="panel about-unified-card">
+          <div className="about-unified-grid">
+            <div className="about-unified-media">
+              {mediaVideo ? (
+                <video
+                  className="about-media-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={mediaImage}
+                >
+                  <source src={mediaVideo} type="video/mp4" />
+                </video>
+              ) : (
+                <Image src={mediaImage} alt="About SMT" fill className="media-image" />
+              )}
+            </div>
+
+            <div className="about-unified-content">
+              <p className="eyebrow">{heading}</p>
+              <h2 className="about-title">{title}</h2>
+              <p className="about-text">{description}</p>
+
+              {strengths.length ? (
+                <ul className="about-pill-list" aria-label="SMT strengths">
+                  {strengths.map((strength) => (
+                    <li key={strength} className="about-pill">
+                      {strength}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </article>
