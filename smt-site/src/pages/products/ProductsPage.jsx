@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getHomepageContent } from "@/lib/getHomepageContent";
 import ProductThumbCarousel from "./ProductThumbCarousel";
+import ProductFooterCarousel from "./ProductFooterCarousel";
 import styles from "./ProductsPage.module.css";
 
 const DEFAULT_PRODUCT_IMAGE = "/wallmount/04-removebg-preview.png";
@@ -97,6 +98,8 @@ export default async function ProductsPage() {
           })}
         </div>
       </section>
+
+      <ProductFooterCarousel />
     </main>
   );
 }
