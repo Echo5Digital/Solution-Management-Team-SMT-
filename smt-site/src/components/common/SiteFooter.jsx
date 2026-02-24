@@ -34,11 +34,12 @@ const SOCIAL_LINKS = [
 export default function SiteFooter() {
   const pathname = usePathname();
   const showHomeCta = pathname === "/";
+  const isProductsPage = pathname === "/products";
   const { email, phone } = homepageContent.contact ?? {};
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.siteFooter}>
+    <footer className={`${styles.siteFooter}${isProductsPage ? ` ${styles.noTopGap}` : ""}`}>
       <div className={`shell ${styles.footerInner}`}>
         {showHomeCta ? (
           <section className={styles.footerCta} aria-label="Footer call to action">
