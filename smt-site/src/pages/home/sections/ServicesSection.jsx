@@ -3,7 +3,7 @@ import Link from "next/link";
 import { homepageContent } from "@/content/homepage";
 import styles from "./ServicesSection.module.css";
 
-export default function ServicesSection({ services = homepageContent.services } = {}) {
+export default function ServicesSection({ services = homepageContent.services, showCta = true } = {}) {
   const data = { ...homepageContent.services, ...services };
   const detailSections = Array.isArray(data.detailSections) ? data.detailSections : [];
   const featuredServices = detailSections.slice(0, 3);
@@ -31,9 +31,11 @@ export default function ServicesSection({ services = homepageContent.services } 
     <section id="services" className={`section ${styles.servicesFeatured}`}>
       <div className={styles.servicesFeaturedHead}>
         <h2 className={styles.servicesFeaturedTitle}>{data.heading}</h2>
-        <Link href="/contact-us" className={`ripple-button ${styles.servicesFeaturedCta}`}>
-          Learn More
-        </Link>
+        {showCta ? (
+          <Link href="/services" className={`ripple-button ${styles.servicesFeaturedCta}`}>
+            Learn More
+          </Link>
+        ) : null}
       </div>
 
       <p className={styles.servicesFeaturedSubtitle}>{introPreview}</p>
