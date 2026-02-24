@@ -5,9 +5,9 @@ import Image from "next/image";
 import styles from "./ProductsPage.module.css";
 
 const SLIDES = [
+  "/carosal1.1.jpg",
   "/carosal1.3.jpg",
-  "/carosal1.3.jpg",
-  "/carosal1.3.jpg",
+  "/carosal1.2.jpg",
 ];
 
 const AUTO_MS = 3000;
