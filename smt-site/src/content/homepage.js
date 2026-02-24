@@ -5,7 +5,7 @@ export const homepageContent = {
     title: "We Provide Mounting Solutions for Your Business",
     subtitle:
       "Distributor / Reseller / Installer for ergonomic mounting solutions in hospitals, clinics, and medical offices.",
-    image: "/22128136_abstract_flowing_dots_background_1609.jpg",
+    image: "/image.png",
     video: "/videos/hero-banner.mp4",
     primaryCta: { label: "Contact US", href: "/contact-us" },
     secondaryCta: { label: "Quote", href: "/SmtProducts/Quote" },
