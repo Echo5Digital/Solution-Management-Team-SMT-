@@ -4,15 +4,33 @@
 
 .servicesHero {
   border: 0;
+  height: 75vh;     
+  min-height: 350px;
 }
 
 .servicesHeroImage {
   opacity: 0.5;
 }
 
-.servicesHeroCopy {
-  max-width: none;
+.servicesHeroGrid {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  height: 100%;
+  padding: 0 clamp(14px, 2.8vw, 34px);
+}
+
+.servicesHeroLayout {
   width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicesHeroCopy {
+  max-width: 760px;
+  margin-inline: auto;
   text-align: center;
 }
 

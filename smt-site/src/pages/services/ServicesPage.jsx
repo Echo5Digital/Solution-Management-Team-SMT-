@@ -12,8 +12,8 @@ export default async function ServicesPage() {
         <article className={`promo-banner ${styles.servicesHero}`}>
           <Image src="/services.jpg" alt="Our Services" fill priority className={`banner-bg-image ${styles.servicesHeroImage}`} />
 
-          <div className="banner-grid">
-            <div className="banner-layout">
+          <div className={`banner-grid ${styles.servicesHeroGrid}`}>
+            <div className={`banner-layout ${styles.servicesHeroLayout}`}>
               <div className={`banner-copy ${styles.servicesHeroCopy}`}>
                 <h1 className={`banner-main ${styles.servicesHeroTitle}`}>OUR SERVICES</h1>
                 <p className={`banner-sub ${styles.servicesHeroSubtitle}`}>
