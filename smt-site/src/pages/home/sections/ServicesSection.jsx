@@ -3,10 +3,17 @@ import Link from "next/link";
 import { homepageContent } from "@/content/homepage";
 import styles from "./ServicesSection.module.css";
 
-export default function ServicesSection({ services = homepageContent.services, showCta = true } = {}) {
+export default function ServicesSection({
+  services = homepageContent.services,
+  showCta = true,
+  showHeading = true,
+  showIntro = true,
+  stackCards = false,
+} = {}) {
   const data = { ...homepageContent.services, ...services };
   const detailSections = Array.isArray(data.detailSections) ? data.detailSections : [];
   const featuredServices = detailSections.slice(0, 3);
+  const showHead = showHeading || showCta;
   const introText = typeof data.intro === "string" ? data.intro.trim() : "";
   const introPreview =
     introText.length > 195
@@ -28,17 +35,26 @@ export default function ServicesSection({ services = homepageContent.services, s
   };
 
   return (
-    <section id="services" className={`section ${styles.servicesFeatured}`}>
-      <div className={styles.servicesFeaturedHead}>
-        <h2 className={styles.servicesFeaturedTitle}>{data.heading}</h2>
-        {showCta ? (
-          <Link href="/services" className={`ripple-button ${styles.servicesFeaturedCta}`}>
-            Learn More
-          </Link>
-        ) : null}
-      </div>
+    <section
+      id="services"
+      className={`section ${styles.servicesFeatured}${stackCards ? ` ${styles.servicesFeaturedStacked}` : ""}`}
+    >
+      {showHead ? (
+        <div className={styles.servicesFeaturedHead}>
+          {showHeading ? <h2 className={styles.servicesFeaturedTitle}>{data.heading}</h2> : null}
+          {showCta ? (
+            <Link href="/services" className={`ripple-button ${styles.servicesFeaturedCta}`}>
+              Learn More
+            </Link>
+          ) : null}
+        </div>
+      ) : null}
 
-      <p className={styles.servicesFeaturedSubtitle}>{introPreview}</p>
+      {showIntro ? (
+        <p className={`${styles.servicesFeaturedSubtitle}${!showHead ? ` ${styles.servicesFeaturedSubtitleNoHead}` : ""}`}>
+          {introPreview}
+        </p>
+      ) : null}
 
       <div className={styles.servicesFeaturedGrid}>
         {featuredServices.map((item, index) => (

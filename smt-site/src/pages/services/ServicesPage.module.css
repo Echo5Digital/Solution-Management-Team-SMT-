@@ -1,0 +1,46 @@
+.pageMain {
+  overflow-x: hidden;
+}
+
+.servicesHero {
+  border: 0;
+}
+
+.servicesHeroImage {
+  opacity: 0.5;
+}
+
+.servicesHeroCopy {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+}
+
+.servicesHeroTitle {
+  max-width: none;
+  color: #102a4d;
+  text-shadow: none;
+}
+
+.servicesHeroSubtitle {
+  max-width: 56ch;
+  margin-inline: auto;
+  color: #1d3c63;
+  text-shadow: none;
+}
+
+.servicesIntroCard {
+  box-shadow:
+    0 14px 34px rgba(16, 42, 77, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.servicesIntroText {
+  margin-top: 0;
+  line-height: 1.72;
+  color: #41516a;
+}
+
+.servicesIntroText + .servicesIntroText {
+  margin-top: 0.95rem;
+}

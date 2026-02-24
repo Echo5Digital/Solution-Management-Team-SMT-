@@ -10,6 +10,10 @@
   
 }
 
+.servicesFeaturedStacked {
+  max-width: 920px;
+}
+
 .servicesFeatured::before,
 .servicesFeatured::after {
   content: "";
@@ -64,6 +68,10 @@
   font-size: 0.97rem;
 }
 
+.servicesFeaturedSubtitleNoHead {
+  margin-top: 0;
+}
+
 /* GRID - Enhanced for Wave Flow */
 .servicesFeaturedGrid {
   position: relative;
@@ -79,6 +87,15 @@
   .servicesFeaturedGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.2rem 2.5rem;
+  }
+
+  .servicesFeaturedStacked .servicesFeaturedGrid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .servicesFeaturedStacked .servicesFeaturedCard:nth-child(2) {
+    margin-top: 0;
   }
 }
 
