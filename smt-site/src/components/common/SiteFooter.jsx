@@ -17,7 +17,7 @@ const QUICK_LINKS = [
 ];
 
 const OTHER_LINKS = [
-  { label: "Products", href: "/#products" },
+  { label: "Products", href: "/products" },
   { label: "Quote", href: "/SmtProducts/Quote" },
   { label: "About Us", href: "/about-us" },
   { label: "Contact", href: "/contact-us" },
@@ -50,7 +50,7 @@ export default function SiteFooter() {
               <h2 className={styles.footerCtaTitle}>Smart Mounting Solutions for Modern Healthcare.</h2>
               <span className={styles.footerCtaDivider} aria-hidden />
               <p className={styles.footerCtaSub}>
-                Tell us your needs, and we'll provide customized systems that enhance comfort, safety, and productivity.
+                Tell us your needs, and we&rsquo;ll provide customized systems that enhance comfort, safety, and productivity.
               </p>
             </div>
 

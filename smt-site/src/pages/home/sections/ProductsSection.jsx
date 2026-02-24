@@ -23,6 +23,17 @@ export default function ProductsSection({ products = homepageContent.products } 
 
             <div className="product-showcase-media">
               <Image src={item.image} alt={item.heading} fill className="product-showcase-image" />
+              {item.smallImage ? (
+                <span className="product-showcase-small-wrap">
+                  <Image
+                    src={item.smallImage}
+                    alt={`${item.heading} detail`}
+                    fill
+                    sizes="150px"
+                    className="product-showcase-small-image"
+                  />
+                </span>
+              ) : null}
             </div>
           </article>
         ))}

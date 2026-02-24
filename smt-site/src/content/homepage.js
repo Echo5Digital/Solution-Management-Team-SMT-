@@ -69,6 +69,7 @@ export const homepageContent = {
         heading: "Wall Mount",
         text: "The Wall Station combines exceptional space-savings with ergonomic design for comfortable caregiver computer use, whether seated or standing. The Wall Station supports a monitor and keyboard along with hardware, shelves, and accessories.",
         image: "/wallmount/04-removebg-preview.png",
+        smallImage: "/wallmount/772264-01-removebg-preview.png",
       },
       {
         heading: "Wall and Desk Monitor Mount",
