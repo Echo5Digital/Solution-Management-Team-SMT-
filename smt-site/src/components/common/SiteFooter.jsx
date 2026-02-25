@@ -34,7 +34,7 @@ const SOCIAL_LINKS = [
 export default function SiteFooter() {
   const pathname = usePathname();
   const showHomeCta = pathname === "/";
-  const noTopGap = pathname === "/products" || pathname === "/contact-us";
+  const noTopGap = pathname === "/" || pathname === "/products" || pathname === "/contact-us";
   const { email, phone } = homepageContent.contact ?? {};
   const year = new Date().getFullYear();
 
