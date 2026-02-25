@@ -59,9 +59,9 @@
 
 .bannerTitle {
   margin: 0.65rem 0 0;
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: clamp(1.95rem, 5vw, 4rem);
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1.03;
   letter-spacing: 0.01em;
@@ -196,7 +196,7 @@
 
 .productTitle {
   margin: 0.7rem 0 0;
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: clamp(1.5rem, 3.2vw, 2.3rem);
   font-weight: 800;
   color: #102542;

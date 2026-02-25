@@ -4,8 +4,23 @@
 
 .servicesHero {
   border: 0;
-  height: 75vh;     
-  min-height: 350px;
+  height: 75vh;
+  height: 75svh;
+  min-height: 300px;
+}
+
+@media (max-width: 760px) {
+  .servicesHero {
+    height: 60svh;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesHero {
+    height: 55svh;
+    min-height: 220px;
+  }
 }
 
 .servicesHeroImage {

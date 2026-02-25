@@ -48,8 +48,13 @@
 
 .servicesFeaturedTitle {
   margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   max-width: 18ch;
-  line-height: 1.2;
+  line-height: 1.12;
   color: #102a4d;
   text-wrap: balance;
 }
@@ -128,9 +133,12 @@
 
 .servicesFeaturedCardHead h3 {
   margin: 0;
-  color: #0f1e43;
-  font-size: 1.05rem;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #0f1e43;
   line-height: 1.3;
 }
 
@@ -141,6 +149,7 @@
   font-size: 0.88rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -218,6 +227,28 @@
 }
 
 /* RESPONSIVE */
+@media (max-width: 760px) {
+  .servicesFeaturedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .servicesFeaturedHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .servicesFeaturedCta {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .servicesFeaturedTitle {
+    max-width: none;
+  }
+}
+
 @media (max-width: 620px) {
   .servicesFeatured {
     padding: 0.85rem 0.75rem 1rem;

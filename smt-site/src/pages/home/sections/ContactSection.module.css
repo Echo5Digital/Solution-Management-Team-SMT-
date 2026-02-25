@@ -19,10 +19,10 @@
 .infoHeading {
   margin: 0 0 1rem;
   font-family: var(--font-manrope), sans-serif;
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  font-weight: 800;
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   color: #0b1019;
   line-height: 1.05;
 }
@@ -80,10 +80,10 @@
 .formHeading {
   margin: 0 0 1.5rem;
   font-family: var(--font-manrope), sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 800;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.01em;
   color: #111827;
 }
 

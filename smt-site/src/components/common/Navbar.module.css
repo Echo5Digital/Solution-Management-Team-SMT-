@@ -40,8 +40,8 @@
 
 .logoImageWrap {
   position: relative;
-  width: clamp(138px, 12.5vw, 182px);
-  height: clamp(40px, 3.9vw, 50px);
+  width: clamp(160px, 15vw, 220px);
+  height: clamp(46px, 4.8vw, 58px);
 }
 
 .logoImage {
@@ -115,7 +115,8 @@
 }
 
 .mobilePanel.isOpen {
-  max-height: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
   border-top: 1px solid rgba(207, 214, 227, 0.7);
 }
 
@@ -169,7 +170,30 @@
   }
 
   .logoImageWrap {
-    width: 136px;
-    height: 40px;
+    width: 152px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navPill {
+    min-height: 54px;
+    padding-inline: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .logoImageWrap {
+    width: 128px;
+    height: 38px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobileNav a {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
   }
 }

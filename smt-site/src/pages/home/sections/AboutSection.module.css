@@ -36,7 +36,8 @@
 
 .title {
   margin: 0.6em 0 0;
-  font-size: clamp(1.55rem, 4.2vw, 2.8rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+  font-weight: 700;
   line-height: 1.08;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -185,6 +186,38 @@
   font-weight: 500;
 }
 
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(1.35rem, 9vw, 1.75rem);
+  }
+
+  .text {
+    font-size: 0.88rem;
+  }
+
+  .pill {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .playIcon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .videoWrap {
+    min-height: 180px;
+  }
+
+  .statCard {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .statLabel {
+    font-size: 0.74rem;
+  }
+}
+
 @media (max-width: 760px) {
   .aboutSection {
     margin-top: 1.2rem;
@@ -198,7 +231,7 @@
   .title {
     margin-top: 0.45rem;
     max-width: none;
-    font-size: clamp(1.5rem, 8.1vw, 2.05rem);
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
     line-height: 1.08;
   }
 
