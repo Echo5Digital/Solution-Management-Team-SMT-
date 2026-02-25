@@ -7,6 +7,8 @@
   margin-inline: auto;
   padding: clamp(1rem, 2.4vw, 1.6rem);
   overflow: hidden;
+  padding-bottom: 100px;
+  padding-top: 100px;
   
 }
 
