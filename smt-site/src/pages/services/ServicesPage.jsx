@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getHomepageContent } from "@/lib/getHomepageContent";
 import ServicesSection from "@/pages/home/sections/ServicesSection";
+import ServicesFeatureSection from "./ServicesFeatureSection";
 import styles from "./ServicesPage.module.css";
 
 export default async function ServicesPage() {
@@ -51,6 +52,8 @@ export default async function ServicesPage() {
           stackCards={true}
         />
       </div>
+
+      <ServicesFeatureSection />
     </main>
   );
 }

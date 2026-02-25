@@ -1,0 +1,121 @@
+/* ── Section shell — fixed texture background ── */
+.featureSection {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0 0;
+
+  /* Subtle diagonal-slash texture, fixed so it doesn't scroll */
+  background-color: #f3f6fb;
+  background-image:
+    repeating-linear-gradient(
+      -58deg,
+      transparent 0px,
+      transparent 22px,
+      rgba(140, 158, 185, 0.13) 22px,
+      rgba(140, 158, 185, 0.13) 23px
+    );
+  background-attachment: fixed;
+  background-size: auto;
+}
+
+/* ── Content layer sits above the fixed bg ── */
+.featureInner {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 150px;
+
+}
+
+/* ── 2×2 grid ── */
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.8rem, 5.5vw, 4.5rem) clamp(2.5rem, 6vw, 5.5rem);
+}
+
+/* ── Each feature card ── */
+.featureItem {
+  display: flex;
+  gap: 1.15rem;
+  align-items: flex-start;
+
+  /* Parallax is applied via inline style — transition smooths it */
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Teal icon box ── */
+.featureIconBox {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #40b3a2 0%, #2e9888 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  box-shadow:
+    0 6px 22px rgba(64, 179, 162, 0.28),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.featureIconBox svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Text ── */
+.featureText {
+  flex: 1;
+  min-width: 0;
+}
+
+.featureTitle {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  color: #102542;
+  line-height: 1.25;
+}
+
+.featureBody {
+  margin: 0;
+  color: #4e6179;
+  line-height: 1.72;
+  font-size: clamp(0.88rem, 1.15vw, 0.96rem);
+}
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureSection {
+    padding-top: 3rem;
+    /* Fixed attachment has no effect on iOS — fall back gracefully */
+    background-attachment: scroll;
+  }
+
+  .featureInner {
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .featureIconBox {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .featureItem {
+    gap: 0.9rem;
+  }
+}
